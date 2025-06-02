@@ -86,7 +86,7 @@ int main(void){
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(250);
+    _delay_ms(25);
 
     // RE (negra)
     for (int i = 0; i < 83; i++) {
@@ -94,7 +94,7 @@ int main(void){
       RE();
     }
     PORTB &= ~0x01;
-    _delay_ms(250);
+    _delay_ms(50);
 
     // DO (corchea)
     for (int i = 0; i < 41; i++) {
@@ -102,7 +102,7 @@ int main(void){
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(250);
+    _delay_ms(25);
 
     // LA (corchea)
     for (int i = 0; i < 41; i++) {
@@ -110,7 +110,7 @@ int main(void){
       LA();
     }
     PORTB &= ~0x01;
-    _delay_ms(250);
+    _delay_ms(25);
 
     // LA (negra)
     for (int i = 0; i < 83; i++) {
@@ -118,7 +118,7 @@ int main(void){
       LA();
     }
     PORTB &= ~0x01;
-    _delay_ms(250);
+    _delay_ms(50);
 
     // LA (corchea)
     for (int i = 0; i < 41; i++) {
@@ -126,7 +126,7 @@ int main(void){
       LA();
     }
     PORTB &= ~0x01;
-    _delay_ms(250);
+    _delay_ms(25);
 
     // DO (corchea)
     for (int i = 0; i < 41; i++) {
