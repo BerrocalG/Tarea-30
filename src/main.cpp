@@ -51,7 +51,7 @@ int main(void){
 
   while(1){
     // MI
-    /*
+    
     for(int i = 0; i < 250; i++){
       PORTB ^= 0x01;
       MI();
@@ -210,10 +210,11 @@ int main(void){
     }
     PORTB &= ~0x01;
     _delay_ms(20);
-*/
+
     //segunda aprte
     //Si
-// 
+
+
 for (int i = 0; i < 375; i++) {
   PORTB ^= 0x01;
   RE();
@@ -276,7 +277,7 @@ for (int i = 0; i < 125; i++) {
 }
 PORTB &= ~0x01;
 _delay_ms(20);
-
+//parte buena
 for (int i = 0; i < 125; i++) {
   PORTB ^= ~0x01;
   DO();
