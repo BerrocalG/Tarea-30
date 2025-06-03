@@ -24,7 +24,7 @@ void RE(void){
 }
 
 void MI(void){
-  OCR0A = 94;
+  OCR0A = 83;
   TCNT0 = 0;
   while (!(TIFR0 & (1 << OCF0A)));
   TIFR0 |= (1 << OCF0A);
@@ -65,68 +65,68 @@ int main(void){
 
   while (1){
     // MI (negra)
-    for (int i = 0; i < 83; i++) {
+    for (int i = 0; i < 165; i++) {
       PORTB ^= 0x01;
       MI();
     }
     PORTB &= ~0x01;
-    _delay_ms(50);
+    _delay_ms(250);
 
     // SI (corchea)
-    for (int i = 0; i < 41; i++) {
+    for (int i = 0; i < 100; i++) {
       PORTB ^= 0x01;
       SI();
     }
     PORTB &= ~0x01;
-    _delay_ms(25);
+    _delay_ms(250);
 
     // DO (corchea)
-    for (int i = 0; i < 41; i++) {
+    for (int i = 0; i < 60; i++) {
       PORTB ^= 0x01;
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(25);
+    _delay_ms(250);
 
     // RE (negra)
-    for (int i = 0; i < 83; i++) {
+    for (int i = 0; i < 105; i++) {
       PORTB ^= 0x01;
       RE();
     }
     PORTB &= ~0x01;
-    _delay_ms(50);
+    _delay_ms(500);
 
     // DO (corchea)
-    for (int i = 0; i < 41; i++) {
+    for (int i = 0; i < 119; i++) {
       PORTB ^= 0x01;
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(25);
+    _delay_ms(250);
 
     // LA (corchea)
-    for (int i = 0; i < 41; i++) {
+    for (int i = 0; i < 140; i++) {
       PORTB ^= 0x01;
       LA();
     }
     PORTB &= ~0x01;
-    _delay_ms(25);
+    _delay_ms(250);
 
     // LA (negra)
-    for (int i = 0; i < 83; i++) {
+    for (int i = 0; i < 70; i++) {
       PORTB ^= 0x01;
       LA();
     }
     PORTB &= ~0x01;
-    _delay_ms(50);
+    _delay_ms(500);
 
     // LA (corchea)
-    for (int i = 0; i < 41; i++) {
+    for (int i = 0; i < 70; i++) {
       PORTB ^= 0x01;
       LA();
     }
     PORTB &= ~0x01;
-    _delay_ms(25);
+    _delay_ms(250);
 
     // DO (corchea)
     for (int i = 0; i < 41; i++) {
@@ -134,15 +134,15 @@ int main(void){
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(25);
+    _delay_ms(250);
 
     // MI (negra)
-    for (int i = 0; i < 83; i++) {
+    for (int i = 0; i < 165; i++) {
       PORTB ^= 0x01;
       MI();
     }
     PORTB &= ~0x01;
-    _delay_ms(50);
+    _delay_ms(500);
 
     // RE (corchea)
     for (int i = 0; i < 41; i++) {
@@ -150,7 +150,7 @@ int main(void){
       RE();
     }
     PORTB &= ~0x01;
-    _delay_ms(25);
+    _delay_ms(250);
 
     // DO (corchea)
     for (int i = 0; i < 41; i++) {
@@ -163,7 +163,7 @@ int main(void){
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(50);
+    _delay_ms(500);
 
     // SI (corchea)
     for (int i = 0; i < 41; i++) {
@@ -171,7 +171,7 @@ int main(void){
       SI();
     }
     PORTB &= ~0x01;
-    _delay_ms(25);
+    _delay_ms(250);
 
     // DO (corchea)
     for (int i = 0; i < 41; i++) {
@@ -179,7 +179,7 @@ int main(void){
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(25);
+    _delay_ms(250);
 
     // RE (negra)
     for (int i = 0; i < 83; i++) {
@@ -187,7 +187,7 @@ int main(void){
       RE();
     }
     PORTB &= ~0x01;
-    _delay_ms(50);
+    _delay_ms(500);
 
     // MI (negra)
     for (int i = 0; i < 83; i++) {
@@ -195,7 +195,7 @@ int main(void){
       MI();
     }
     PORTB &= ~0x01;
-    _delay_ms(50);
+    _delay_ms(500);
 
     // DO (corchea)
     for (int i = 0; i < 41; i++) {
@@ -203,7 +203,7 @@ int main(void){
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(25);
+    _delay_ms(250);
 
     // LA (negra)
     for (int i = 0; i < 83; i++) {
@@ -211,7 +211,7 @@ int main(void){
       LA();
     }
     PORTB &= ~0x01;
-    _delay_ms(50);
+    _delay_ms(500);
 
     // LA (negra)
     for (int i = 0; i < 83; i++) {
@@ -219,7 +219,7 @@ int main(void){
       LA();
     }
     PORTB &= ~0x01;
-    _delay_ms(50);
+    _delay_ms(500);
 
     // Silencio 1000 ms
     _delay_ms(1000);
