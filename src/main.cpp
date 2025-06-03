@@ -214,17 +214,15 @@ int main(void){
     //segunda aprte
     //Si
 
-
+//arreglar
 for (int i = 0; i < 375; i++) {
   PORTB ^= 0x01;
   RE();
 }
-PORTB &= ~0x01;
-_delay_ms(20);
 
 for (int i = 0; i < 125; i++) {
   PORTB ^= 0x01;
-  MI();
+  FA();
 }
 PORTB &= ~0x01;
 _delay_ms(20);
@@ -242,7 +240,7 @@ for (int i = 0; i < 125; i++) {
 }
 PORTB &= ~0x01;
 _delay_ms(20);
-
+//bien de aca para abajo
 for (int i = 0; i < 125; i++) {
   PORTB ^= 0x01;
   FA();
@@ -277,9 +275,9 @@ for (int i = 0; i < 125; i++) {
 }
 PORTB &= ~0x01;
 _delay_ms(20);
-//parte buena
+
 for (int i = 0; i < 125; i++) {
-  PORTB ^= ~0x01;
+  PORTB ^= 0x01;
   DO();
 }
 PORTB &= ~0x01;
@@ -341,5 +339,7 @@ for (int i = 0; i < 250; i++) {
 PORTB &= ~0x01;
 _delay_ms(20);
 
-_delay_ms(416);
-  }}
+// Pausa negra
+_delay_ms(500);
+  }
+}
