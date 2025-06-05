@@ -7,43 +7,42 @@ void config_timer(void){
   TCCR0B |= (1 << CS02);
 }
 void FA(void){
-   OCR0A = 50;  // frecuencia ~698 Hz para FA5 (aprox)
+   OCR0A = 50;  
    TCNT0 = 0;
    while (!(TIFR0 & (1 << OCF0A)));
    TIFR0 |= (1 << OCF0A);
 }
 void SOL(void){
-   OCR0A = 45;  // frecuencia ~784 Hz para SOL5 (aprox)
+   OCR0A = 45;  
    TCNT0 = 0;
    while (!(TIFR0 & (1 << OCF0A)));
    TIFR0 |= (1 << OCF0A);
 }
-
-void MI(void){
+  void MI(void){
    OCR0A = 47;
    TCNT0 = 0;
     while (!(TIFR0 & (1 << OCF0A)));
     TIFR0 |= (1 << OCF0A); }  
-void SI(void){
+  void SI(void){
    OCR0A = 63;
   TCNT0 = 0;
      while (!(TIFR0 & (1 << OCF0A)));
      TIFR0 |= (1 << OCF0A); }  
-void DO(void){
+  void DO(void){
    OCR0A = 60;
    TCNT0 = 0;
    while (!(TIFR0 & (1 << OCF0A)));
-    TIFR0 |= (1 << OCF0A); }  // 523 Hz
-void RE(void){
+    TIFR0 |= (1 << OCF0A); } 
+  void RE(void){
    OCR0A = 54;
    TCNT0 = 0;
   while (!(TIFR0 & (1 << OCF0A)));
-   TIFR0 |= (1 << OCF0A); }  // 587 Hz
-void LA(void){ 
-  OCR0A = 71; 
-  TCNT0 = 0;
+   TIFR0 |= (1 << OCF0A); }  
+    void LA(void){ 
+    OCR0A = 71; 
+    TCNT0 = 0;
    while (!(TIFR0 & (1 << OCF0A)));
-    TIFR0 |= (1 << OCF0A); }  // 440 Hz
+    TIFR0 |= (1 << OCF0A); }  
 
 int main(void){
   config_timer();
@@ -57,7 +56,7 @@ int main(void){
       MI();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // SI
     for(int i = 0; i < 125; i++){
@@ -65,7 +64,7 @@ int main(void){
       SI();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // DO
     for(int i = 0; i < 125; i++){
@@ -73,7 +72,7 @@ int main(void){
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // RE
     for(int i = 0; i < 250; i++){
@@ -81,7 +80,7 @@ int main(void){
       RE();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // D0
     for(int i = 0; i < 125; i++){
@@ -89,7 +88,7 @@ int main(void){
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // SI
     for(int i = 0; i < 125; i++){
@@ -97,7 +96,7 @@ int main(void){
       SI();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // LA
     for(int i = 0; i < 250; i++){
@@ -105,7 +104,7 @@ int main(void){
       LA();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // LA
     for(int i = 0; i < 125; i++){
@@ -113,7 +112,7 @@ int main(void){
       LA();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // DO
     for(int i = 0; i < 125; i++){
@@ -121,7 +120,7 @@ int main(void){
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // MI
     for(int i = 0; i < 250; i++){
@@ -129,7 +128,7 @@ int main(void){
       MI();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // RE
     for(int i = 0; i < 125; i++){
@@ -137,7 +136,7 @@ int main(void){
       RE();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // DO
     for(int i = 0; i < 125; i++){
@@ -145,7 +144,7 @@ int main(void){
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // SI
     for(int i = 0; i < 250; i++){
@@ -153,7 +152,7 @@ int main(void){
       SI();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // DO
     for(int i = 0; i < 125; i++){
@@ -161,7 +160,7 @@ int main(void){
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // RE
     for(int i = 0; i < 250; i++){
@@ -169,7 +168,7 @@ int main(void){
       RE();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // MI
     for(int i = 0; i < 250; i++){
@@ -177,7 +176,7 @@ int main(void){
       MI();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // DO
     for(int i = 0; i < 250; i++){
@@ -185,7 +184,7 @@ int main(void){
       DO();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // LA
     for(int i = 0; i < 250; i++){
@@ -193,151 +192,162 @@ int main(void){
       LA();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
 
     // LA
-    for(int i = 0; i < 250; i++){
+    for(int i = 0; i < 375; i++){
       PORTB ^= 0x01;
       LA();
     }
     PORTB &= ~0x01;
-    _delay_ms(20);
-
-    // LA
-    for(int i = 0; i < 500; i++){
-      PORTB ^= 0x01;
-      LA();
-    }
-    PORTB &= ~0x01;
-    _delay_ms(20);
+    _delay_ms(60);
+//
+    _delay_ms(500);
 
     //segunda aprte
     //Si
 
-//arreglar
-for (int i = 0; i < 375; i++) {
-  PORTB ^= 0x01;
-  RE();
-}
+    
+  for (int i = 0; i < 125; i++) {
+    PORTB ^= 0x01;
+    RE();
+  } 
+  PORTB &= ~0x01;
+    _delay_ms(60);
 
-for (int i = 0; i < 125; i++) {
+  for (int i = 0; i < 125; i++) {
   PORTB ^= 0x01;
   FA();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
-for (int i = 0; i < 250; i++) {
-  PORTB ^= 0x01;
-  LA();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  for (int i = 0; i < 250; i++) {
+    PORTB ^= 0x01;
+    LA();
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
-for (int i = 0; i < 125; i++) {
+  for (int i = 0; i < 125; i++) {
   PORTB ^= 0x01;
   SOL();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 //bien de aca para abajo
-for (int i = 0; i < 125; i++) {
+  for (int i = 0; i < 125; i++) {
   PORTB ^= 0x01;
   FA();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
-for (int i = 0; i < 375; i++) {
+  for (int i = 0; i < 375; i++) {
   PORTB ^= 0x01;
   MI();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
-for (int i = 0; i < 125; i++) {
+  for (int i = 0; i < 125; i++) {
   PORTB ^= 0x01;
   DO();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
-for (int i = 0; i < 250; i++) {
+  for (int i = 0; i < 125; i++) {
   PORTB ^= 0x01;
   MI();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
+
+  for (int i = 0; i < 125; i++) {
+  PORTB ^= 0x01;
+  RE();
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
+
+ for (int i = 0; i < 125; i++) {
+  PORTB ^= 0x01;
+  MI();
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
 for (int i = 0; i < 125; i++) {
   PORTB ^= 0x01;
   RE();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
-for (int i = 0; i < 125; i++) {
+  for (int i = 0; i < 125; i++) {
   PORTB ^= 0x01;
   DO();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
-for (int i = 0; i < 250; i++) {
+  for (int i = 0; i < 250; i++) {
   PORTB ^= 0x01;
   SI();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01; 
 
-for (int i = 0; i < 125; i++) {
+  _delay_ms(60);
+
+  for (int i = 0; i < 125; i++) {
   PORTB ^= 0x01;
   SI();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
-for (int i = 0; i < 125; i++) {
+  for (int i = 0; i < 125; i++) {
   PORTB ^= 0x01;
   DO();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
-for (int i = 0; i < 250; i++) {
+  for (int i = 0; i < 250; i++) {
   PORTB ^= 0x01;
   RE();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
-for (int i = 0; i < 250; i++) {
+  for (int i = 0; i < 250; i++) {
   PORTB ^= 0x01;
   MI();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
-for (int i = 0; i < 250; i++) {
+  for (int i = 0; i < 250; i++) {
   PORTB ^= 0x01;
   DO();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
-for (int i = 0; i < 250; i++) {
+  for (int i = 0; i < 250; i++) {
   PORTB ^= 0x01;
   LA();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
-for (int i = 0; i < 250; i++) {
+  for (int i = 0; i < 250; i++) {
   PORTB ^= 0x01;
   LA();
-}
-PORTB &= ~0x01;
-_delay_ms(20);
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
 
 
 _delay_ms(500);
@@ -348,28 +358,28 @@ for (int i = 0; i < 500; i++) {
   MI();
 }
 PORTB &= ~0x01;
-_delay_ms(60);
+_delay_ms(120);
 
 for (int i = 0; i < 500; i++) {
   PORTB ^= 0x01;
   DO();
 }
 PORTB &= ~0x01;
-_delay_ms(60);
+_delay_ms(120);
 
 for (int i = 0; i < 500; i++) {
   PORTB ^= 0x01;
   RE();
 }
 PORTB &= ~0x01;
-_delay_ms(60);
+_delay_ms(120);
 
 for (int i = 0; i < 500; i++) {
   PORTB ^= 0x01;
   SI();
 }
 PORTB &= ~0x01;
-_delay_ms(60);
+_delay_ms(120);
 
 //
 
@@ -378,21 +388,21 @@ for (int i = 0; i < 500; i++) {
   DO();
 }
 PORTB &= ~0x01;
-_delay_ms(60);
+_delay_ms(120);
 
 for (int i = 0; i < 500; i++) {
   PORTB ^= 0x01;
   LA();
 }
 PORTB &= ~0x01;
-_delay_ms(60);
+_delay_ms(120);
 
 for (int i = 0; i < 500; i++) {
   PORTB ^= 0x01;
   SOL();
 }
 PORTB &= ~0x01;
-_delay_ms(60);
+_delay_ms(120);
 
 _delay_ms(1000);
 
@@ -403,14 +413,14 @@ for (int i = 0; i < 500; i++) {
   MI();
 }
 PORTB &= ~0x01;
-_delay_ms(60);
+_delay_ms(120);
 
 for (int i = 0; i < 500; i++) {
   PORTB ^= 0x01;
   DO();
 }
 PORTB &= ~0x01;
-_delay_ms(60);
+_delay_ms(120);
 
 for (int i = 0; i < 500; i++) {
   PORTB ^= 0x01;
@@ -424,7 +434,7 @@ for (int i = 0; i < 500; i++) {
   SI();
 }
 PORTB &= ~0x01;
-_delay_ms(60);
+_delay_ms(120);
 //
 for (int i = 0; i < 250; i++) {
   PORTB ^= 0x01;
@@ -440,7 +450,7 @@ for (int i = 0; i < 250; i++) {
 PORTB &= ~0x01;
 _delay_ms(120);
 
-for (int i = 0; i < 500; i++) {
+for (int i = 0; i < 250; i++) {
   PORTB ^= 0x01;
   LA();
 }
@@ -453,5 +463,5 @@ for (int i = 0; i < 500; i++) {
 }
 PORTB &= ~0x01;
 _delay_ms(60);
-
-  }}
+}
+}
