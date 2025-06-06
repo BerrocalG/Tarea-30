@@ -82,6 +82,20 @@ int main(void){
     PORTB &= ~0x01;
     _delay_ms(60);
 
+    for (int i = 0; i < 125; i++) {
+  PORTB ^= 0x01;
+  MI();
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
+
+  for (int i = 0; i < 125; i++) {
+  PORTB ^= 0x01;
+  RE();
+  }
+  PORTB &= ~0x01;
+  _delay_ms(60);
+
     // D0
     for(int i = 0; i < 125; i++){
       PORTB ^= 0x01;
@@ -208,12 +222,12 @@ int main(void){
     //Si
 
     
-  for (int i = 0; i < 125; i++) {
+  for (int i = 0; i < 250; i++) {
     PORTB ^= 0x01;
     RE();
   } 
   PORTB &= ~0x01;
-    _delay_ms(60);
+    _delay_ms(120);
 
   for (int i = 0; i < 125; i++) {
   PORTB ^= 0x01;
